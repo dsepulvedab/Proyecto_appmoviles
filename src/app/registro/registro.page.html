@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button>volver</ion-back-button>
     </ion-buttons>
     <ion-title>Registro</ion-title>
   </ion-toolbar>
@@ -27,9 +27,7 @@
           <ion-input formControlName="confirmacion_password"></ion-input>
         </ion-item>
       
-        <ion-button (click)="ingresar()">
-          Registrarse
-        </ion-button>
+        <ion-button (click)="guardar()">Registarse</ion-button>
       </form>
     </ion-card-content>
   </ion-card>
