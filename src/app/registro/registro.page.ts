@@ -25,37 +25,28 @@ export class RegistroPage implements OnInit {
     this.formularioRegistro = this.fb.group({
       'nombre': new FormControl("",Validators.required),
       'password': new FormControl("",Validators.required),
-      'confirmacion_password': new FormControl("",Validators.required)
+      'confirmacionpassword': new FormControl("",Validators.required)
     })
    }
 
   ngOnInit() {
   }
 
-  async guardar(){
-    
-    var f = this.formularioRegistro.value;
+  async registrar(){
+   console.log('Guardar');
+   var f = this.formularioRegistro.value;
 
-    if(this.formularioRegistro.invalid){
-      const alert = await this.alertController.create({
-        header: 'Datos incompletos',
-        message: 'Tienes que llenar todos los campos',
-        buttons: ['Aceptar']
-      });
+   if(this.formularioRegistro.invalid){
+    const alert = await this.alertController.create({
+      message: 'Tienes que rellenar los datos',
+      buttons: ['Aceptar']
+    });
 
-      await alert.present();
-      return;
-    }
+    await alert.present();
+    return;
 
-    var usuario ={
-      nombre: f.nombre,
-      password: f.password
-    }
-    localStorage.setItem('usuario', JSON.stringify(usuario));
-
-    localStorage.setItem('ingresado','true');
-      this.navCtrl.navigateRoot('login');
-    
   }
 
+
+  }
 }
