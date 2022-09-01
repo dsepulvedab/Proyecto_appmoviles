@@ -1,22 +1,25 @@
 <ion-header class="ion-no-border">
+  <div #header>
   <ion-toolbar>
     <ion-buttons slot="end">
       <ion-button routerLink="/registro">Registrarse</ion-button>
     </ion-buttons>
   </ion-toolbar>
+</div>
 </ion-header>
 
 <ion-content>
-  <div id="header">
+  <div id="header" #logo>
     <h1>Bienvenido/a</h1>
     <img src="assets/descarga.png">
   </div>
 
   <ion-card-content>
+    <div #content>
     <ion-input type="text" [{ngModel}]="user.usuario" placeholder="Usuario"></ion-input>
     <ion-input type="password" [(ngModel)]="user.password" placeholder="Contraseña"></ion-input>            
     <ion-button (click)="ingresar()" expand="block" shape="round">Iniciar sesion</ion-button> 
-
+    </div>
   </ion-card-content>
 
 
