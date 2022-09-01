@@ -1,9 +1,20 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>inicio</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/login">salir</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
-</ion-content>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+  </ion-header>
+    <ion-card>
+        <ion-card-content>
+      <ion-item lines="none">
+                <ion-label >Usuario: {{data.usuario}}</ion-label>
+      </ion-item>
+    </ion-card-content>
+      </ion-card>
+  </ion-content>

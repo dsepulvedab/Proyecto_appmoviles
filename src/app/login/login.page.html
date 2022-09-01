@@ -12,12 +12,12 @@
     <img src="assets/descarga.png">
   </div>
 
-  <form id="form">
-    <ion-input formControlname ="nombre" placeholder="Usuario"></ion-input>
-    <ion-input formControlname ="password" type="password" placeholder="Contraseña"></ion-input>            
+  <ion-card-content>
+    <ion-input type="text" [{ngModel}]="user.usuario" placeholder="Usuario"></ion-input>
+    <ion-input type="password" [(ngModel)]="user.password" placeholder="Contraseña"></ion-input>            
     <ion-button (click)="ingresar()" expand="block" shape="round">Iniciar sesion</ion-button> 
 
-  </form>
+  </ion-card-content>
 
 
 </ion-content>
