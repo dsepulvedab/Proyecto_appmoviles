@@ -1,34 +1,25 @@
-<ion-header>
-  <ion-toolbar color="primary">
+<ion-header class="ion-no-border">
+  <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button>volver</ion-back-button>
+      <ion-button routerLink="/login" color=#ffffff>
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
     </ion-buttons>
-    <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card>
+<ion-content>  
+    <h1>Crea tu <br />cuenta</h1>
 
-    <ion-card-content>
+  <form id="form" [formGroup]="formularioRegistro" (keyup.enter)="registrar()">
+    <ion-input formControlname ="nombre" placeholder="Nombre"></ion-input>
+    <ion-input formControlname ="password" type="password" placeholder="Contraseña"></ion-input>
+    <ion-input formControlname ="confirmacionpassword" type="password" placeholder="Confirme su Contraseña"></ion-input>            
+    <ion-button routerLink="/login" (click)="registrar()" expand="block" shape="round">Registrar</ion-button> 
 
-      <form [formGroup]="formularioRegistro">
-        <ion-item>
-          <ion-label position="floating">Nombre</ion-label>
-          <ion-input formControlName="nombre"></ion-input>
+  </form>
 
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Contraseña</ion-label>
-          <ion-input formControlName="password" type="password"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Confirmar Contraseña</ion-label>
-          <ion-input formControlName="confirmacion_password" type ="password"></ion-input>
-        </ion-item>
-      
-        <ion-button (click)="guardar()">Registarse</ion-button>
-      </form>
-    </ion-card-content>
-  </ion-card>
+  <p>Presionando 'Registrar' estaras aceptando <br> nuestros terminos & condiciones.</p>
+
+
 </ion-content>
