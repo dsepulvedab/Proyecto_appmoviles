@@ -1,20 +1,30 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'inicio.page.html',
-  styleUrls: ['inicio.page.scss'],
+  selector: 'app-inicio',
+  templateUrl: './inicio.page.html',
+  styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage {
-  data: any;
 
-  constructor(public activeroute: ActivatedRoute, public router: Router) {    
-    this.activeroute.queryParams.subscribe(params => {
-      if (this.router.getCurrentNavigation().extras.state) {
-        this.data = this.router.getCurrentNavigation().extras.state.user;
-        console.log(this.data)
-      }else{this.router.navigate(["/login"])} 
-    });
+  lista: Array<any> =[
+    {
+      titulo: "Perro",
+      color: "#444",
+    },
+    {
+      titulo: "Gato",
+      color: "#999",
+    },
+    {
+      titulo: "Pajaro",
+      color: "#999",
+    },
+  ]
+
+  constructor() { }
+
+  ngOnInit() {
   }
+
 }
