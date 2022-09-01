@@ -7,19 +7,22 @@ import { Component } from '@angular/core';
 })
 export class InicioPage {
 
-  lista: Array<any> =[
+  lista: Array<any> = [
     {
-      titulo: "Perro",
+      titulo: "Inicio",
       color: "#444",
+      icon:"home"
     },
     {
-      titulo: "Gato",
+      titulo: "Explorar",
       color: "#999",
+      icon:"search"
     },
     {
-      titulo: "Pajaro",
+      titulo: "Cuenta",
       color: "#999",
-    },
+      icon:"person"
+    }
   ]
 
   constructor() { }

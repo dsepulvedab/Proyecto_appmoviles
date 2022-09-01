@@ -1,24 +1,26 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>inicio</ion-title>
+  <ion-toolbar>    
     <ion-buttons slot="end">
       <ion-button routerLink="/login">salir</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-card>
-    <ion-card-header>
-      Mi primera lista
-    </ion-card-header>
-    <ion-list>
-      <button ion-item *ngFor="let item of lista">
-        <ion-icon name="cart" item-start></ion-icon>
-        {{ item.titulo }}
-
-      </button>
-    </ion-list>
-  </ion-card>
+<ion-content>
+ 
 
 </ion-content>
+
+<ion-footer> 
+  <ion-toolbar> 
+    <ion-list>
+      <ion-item>
+        <ion-button ion-item *ngFor="let item of lista">
+          <ion-icon name= {{item.icon}} item-start></ion-icon>
+          {{ item.titulo}}
+        </ion-button>
+      </ion-item> 
+    </ion-list>
+  </ion-toolbar> 
+</ion-footer>
+  
